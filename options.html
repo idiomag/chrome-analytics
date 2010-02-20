@@ -3,7 +3,11 @@
 <script type="text/javascript">
 		
 	function init() {
+		// SAMPLE CALL TO TRACK PAGEVIEW	
 		chrome.extension.getBackgroundPage().trackPageview('/options');
+		
+		// SAMPLE CALL TO TRACK EVENT (IE. SAVE)
+		chrome.extension.getBackgroundPage().trackEvent('options', 'save', value);	
 	}
 
 </script>

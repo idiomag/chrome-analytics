@@ -3,7 +3,11 @@
 <script type="text/javascript">
 		
 	function init() {
+		// SAMPLE CALL TO TRACK PAGEVIEW
 		chrome.extension.getBackgroundPage().trackPageview('/popup');
+		
+		// SAMPLE CALL TO TRACK EVENT (IE. CLICK LINK)
+		chrome.extension.getBackgroundPage().trackEvent('popup', 'click', url);
 	}
 
 </script>
