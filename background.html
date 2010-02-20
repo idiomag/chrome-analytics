@@ -1,0 +1,57 @@
+<html>
+<head>
+<script src='http://www.google-analytics.com/ga.js' type='text/javascript'></script>
+<script type="text/javascript">
+	
+	// INSERT YOUR GOOGLE ANALYTICS ID HERE
+	var analyticsID = "UA-XXXXXXX-X";
+	// TRACKER OBJECT
+	var tracker;
+	
+	// TYPICAL INTEGRATION INTO YOUR INITIALISATION
+	function init() {
+		setupTracking();
+	}
+	
+	
+	// SETUP 
+	function setupTracking() {
+		if((analyticsID != undefined) && (typeof(_gat) == 'object')) {
+			try {
+				tracker = _gat._getTracker(analyticsID);
+				tracker._setAllowAnchor(true);
+				tracker._setDomainName("none"); 
+				tracker._setAllowLinker(true);			
+				trackPageview('/session');
+			}
+			catch(err) {
+				// INTEGRATE WITH YOUR ERROR HANDLING
+				// alert(err);
+			}
+		}
+	}
+	
+	
+	function trackPageview(page) {
+		if(analyticsID != undefined) {
+			return tracker._trackPageview(page);
+		}
+	/*	alert("Page tracking was successful? " + success + "\n\n" +
+		  "page: " + page + "\n");	*/
+	}
+	 
+	function trackEvent(category, action, optional_label, optional_value) {
+		if(analyticsID != undefined) {
+			return tracker._trackEvent(category, action, optional_label, optional_value);	
+		}
+	/*	alert("Event tracking was successful? " + success + "\n\n" +
+		  "category: " + category + "\n" +
+		  "action: " +  action + "\n" + 
+		  "optional_label: " + optional_label + "\n" +
+		  "optional_value: " + optional_value + "\n");	  */
+	}
+</script>
+</head>
+<body onLoad="init();">
+</body>
+</html>
