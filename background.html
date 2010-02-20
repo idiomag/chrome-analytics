@@ -21,7 +21,8 @@
 				tracker = _gat._getTracker(analyticsID);
 				tracker._setAllowAnchor(true);
 				tracker._setDomainName("none"); 
-				tracker._setAllowLinker(true);			
+				tracker._setAllowLinker(true);
+				// SAMPLE PAGEVIEW CALL (SUGGESTED FOR BACKGROUND PAGE)
 				trackPageview('/session');
 			}
 			catch(err) {
